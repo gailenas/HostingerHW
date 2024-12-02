@@ -1,16 +1,20 @@
 name: Muffin store automation tests
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu
-    timeout-minutes: 10
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup NodeJS
         uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Install NodeJS Dependencies
         uses: npm install
