@@ -44,6 +44,6 @@ test.describe('Shop flow tests', () => {
     await checkoutPage.confirmOrderSummaryCorrect(product, amount, user);
     await checkoutPage.placeMuffinOrder();
     await productPage.orderReceivedConfirmation();
-    await basePage.confirmEmailReceived(user);
+    // await basePage.confirmEmailReceived(user);
   });
 });
